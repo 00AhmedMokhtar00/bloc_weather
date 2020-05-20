@@ -15,12 +15,20 @@ void main() {
   );
   BlocSupervisor.delegate = SimpleBlocDelegate();
   runApp(
-    BlocProvider<ThemeBloc>(
-      create: (context) => ThemeBloc(),
+    MultiBlocProvider(
+      providers: [
+        BlocProvider<ThemeBloc>(
+          create: (context) => ThemeBloc(),
+        ),
+        BlocProvider<SettingsBloc>(
+          create: (context) => SettingsBloc(),
+        ),
+      ],
       child: App(weatherRepository: weatherRepository),
     ),
   );
 }
+
 
 class App extends StatelessWidget {
   final WeatherRepository weatherRepository;
