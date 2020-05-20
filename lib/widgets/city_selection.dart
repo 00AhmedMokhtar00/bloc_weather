@@ -24,7 +24,7 @@ class _CitySelectionState extends State<CitySelection> {
                   controller: _textController,
                   decoration: InputDecoration(
                     labelText: 'City',
-                    hintText: 'Cairo',
+                    hintText: 'Chicago',
                   ),
                 ),
               ),
